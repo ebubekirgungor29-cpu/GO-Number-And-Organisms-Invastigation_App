@@ -1,39 +1,30 @@
-# Karşılaştırmalı Genomik Analiz Web Uygulaması
+# Comparative Genomics Analysis Web Application
+This project is a local web application developed for the rapid and comparative analysis of biological data. It performs automated queries on the NCBI (National Center for Biotechnology Information) database using a user-defined list of organisms and Gene Ontology (GO) or Enzyme Commission (EC) numbers. The results are presented in an easy-to-understand comparative matrix (table).
 
-Bu proje, biyolojik verilerin hızlı ve karşılaştırmalı analizi için geliştirilmiş yerel bir web uygulamasıdır. Kullanıcıların belirlediği organizma listesi ile bu organizmalarda aranacak Gen Ontology (GO) veya Enzim Komisyonu (EC) numaralarını kullanarak NCBI (National Center for Biotechnology Information) veritabanında otomatik sorgulamalar yapar. Sonuçları, anlaşılması kolay bir karşılaştırma matrisi (tablo) olarak sunar.
+# Installation
+Before running the project, you need to install the required Python libraries.
 
-## Kurulum
+Install dependencies: Open your terminal or command prompt in the project directory and run the following command:
 
-Projeyi çalıştırmadan önce gerekli Python kütüphanelerini yüklemeniz gerekmektedir.
+pip install -r requirements.txt
+This command will install the Flask and BioPython libraries required for the project.
 
-1.  **Proje dosyalarını indirin:** Projeyi bilgisayarınıza klonlayın veya zip olarak indirin.
-2.  **Bağımlılıkları yükleyin:** Terminal veya komut istemcisini proje dizininde açın ve aşağıdaki komutu çalıştırın:
+# How to Run
+Once the dependencies are installed, run the following command in the terminal to start the application:
 
-    ```bash
-    pip install -r requirements.txt
-    ```
-    Bu komut, proje için gerekli olan Flask ve BioPython kütüphanelerini yükleyecektir.
-
-## Nasıl Çalıştırılır?
-
-Bağımlılıklar yüklendikten sonra, uygulamayı başlatmak için terminalde aşağıdaki komutu çalıştırın:
-
-```bash
 python app.py
-```
+When the application starts, you will see an output similar to the following:
 
-Uygulama başlatıldığında, terminalde aşağıdakine benzer bir çıktı göreceksiniz:
-
-```
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-```
+This indicates that the web server is running on port 5000 of your local machine.
 
-Bu, web sunucusunun yerel makinenizde `5000` portunda çalışmaya başladığı anlamına gelir.
+# How to Use
+Open your web browser and navigate to http://127.0.0.1:5000/.
 
-## Nasıl Kullanılır?
+In the "Organisms" box, enter the scientific names of the organisms you wish to analyze, one per line.
 
-1.  Web tarayıcınızı açın ve `http://127.0.0.1:5000/` adresine gidin.
-2.  **"Organizmalar"** kutusuna, analiz etmek istediğiniz canlıların bilimsel adlarını her satıra bir tane gelecek şekilde yazın.
-3.  **"GO veya EC Numaraları"** kutusuna, aramak istediğiniz Gen Ontology veya Enzim Komisyonu numaralarını her satıra bir tane gelecek şekilde yazın.
-4.  **"Analizi Başlat"** düğmesine tıklayın.
-5.  Uygulama, NCBI veritabanında her bir organizma ve terim çifti için sorgulama yapacak ve sonuçları bir matris tablosu olarak size sunacaktır. Tablodaki `✓` işareti, ilgili organizmada o terime karşılık gelen bir kayıt bulunduğunu gösterir.
+In the "GO or EC Numbers" box, enter the Gene Ontology or Enzyme Commission numbers you wish to search for, one per line.
+
+Click the "Start Analysis" button.
+
+The application will query the NCBI database for each organism and term pair and present the results in a matrix table. A ✓ mark in the table indicates that a record corresponding to that term was found in the respective organism.
